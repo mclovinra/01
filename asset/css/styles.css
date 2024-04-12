@@ -3,7 +3,13 @@
     color: black;
 }
 
-body {
+.texto-blanco {
 
-    background-color: rgb(49, 7, 73)
+    color: white;
+}
+
+.fondo-morado-claro {
+
+    background-color: rgb(136, 120, 145)
+    
 }
