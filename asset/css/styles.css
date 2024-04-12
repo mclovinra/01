@@ -3,8 +3,11 @@
     color: black;
 }
 
+.texto-blanco {
 
-.fondo-oscuro{
+    color: white;
+}
 
-    background-color: rgb(180, 180, 180);
+.fondo-morado-claro {
+    background-color: rgb(136, 120, 145)
 }
