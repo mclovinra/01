@@ -4271,6 +4271,8 @@ input[type="button"].btn-block {
   justify-content: space-between;
   padding: 1.5rem 1rem;
   border-radius: .5rem;
+  border-color: white;
+  border-style: ;
 }
 
 .navbar .container,
