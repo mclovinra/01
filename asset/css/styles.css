@@ -61,7 +61,7 @@
     color: #BBBBBB;
     display: block;
     margin-bottom: 15px;
-    transition: #11 .3s ease;
+    transition: #111 .3s ease;
 }
 
 .footer-links ul li a:hover {
@@ -98,4 +98,9 @@
         margin-bottom: 30px;
 
     }
+}
+
+.img-logo{
+    width: 2rem;
+    border-radius: 1.5rem;
 }
