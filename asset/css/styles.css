@@ -3,6 +3,18 @@
     color: black;
 }
 
+.fondo-semi-blnco {
+    background-color: rgb(204, 204, 204);
+
+}
+
+.fondo {
+    background: url(fondo.jpg.jpg)no-repeat;
+    height: 250px;
+    overflow: hidden;
+
+}
+
 .texto-blanco {
 
     color: white;
@@ -61,7 +73,7 @@
     color: #BBBBBB;
     display: block;
     margin-bottom: 15px;
-    transition: #11 .3s ease;
+    transition: #111 .3s ease;
 }
 
 .footer-links ul li a:hover {
