@@ -3,18 +3,6 @@
     color: black;
 }
 
-.fondo-semi-blnco {
-    background-color: rgb(204, 204, 204);
-
-}
-
-.fondo {
-    background: url(fondo.jpg.jpg)no-repeat;
-    height: 250px;
-    overflow: hidden;
-
-}
-
 .texto-blanco {
 
     color: white;
@@ -111,3 +99,9 @@
 
     }
 }
+
+.img-logo{
+    width: 2rem;
+    border-radius: 1.5rem;
+}
+
