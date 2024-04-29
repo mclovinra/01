@@ -104,3 +104,17 @@
     width: 2rem;
     border-radius: 1.5rem;
 }
+
+
+.titulos {
+    color: whitesmoke;
+   border-radius: 3rem;
+   display: grid 50%; 
+   margin: 2rem;
+ text-align: center;
+}
+
+.image-card {
+    width: 350px;
+    height: 368px;
+}
