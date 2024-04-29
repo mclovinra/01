@@ -108,13 +108,26 @@
 
 .titulos {
     color: whitesmoke;
-   border-radius: 3rem;
-   display: grid 50%; 
-   margin: 2rem;
- text-align: center;
+    border-radius: 3rem;
+    display: grid; 
+    margin: 2rem;
+    text-align: center;
 }
 
 .image-card {
     width: 350px;
     height: 366px;
+}
+
+.btn1 {
+    text-align: center;
+    padding-right: 5rem;
+}
+
+.imagen-logo{
+    text-align: right;
+}
+
+.margin {
+    margin: 2rem;
 }
