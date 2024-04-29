@@ -6325,6 +6325,10 @@ a.close.disabled {
   transition: opacity 0.15s ease;
 }
 
+.prev, .next{
+  width: 2%;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .carousel-control-prev,
   .carousel-control-next {
@@ -6376,6 +6380,7 @@ a.close.disabled {
   -ms-flex-pack: center;
   justify-content: center;
   padding-left: 0;
+  padding: 0;
   margin-right: 15%;
   margin-left: 15%;
   list-style: none;
