@@ -4272,7 +4272,7 @@ input[type="button"].btn-block {
   padding: 1.5rem 1rem;
   border-radius: .5rem;
   border-color: white;
-  border-style: ;
+  border-style: var(--red);
 }
 
 .navbar .container,
