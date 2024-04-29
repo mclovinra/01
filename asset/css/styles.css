@@ -3,6 +3,14 @@
     color: black;
 }
 
+.texto-rojo {
+    color:white;
+    border-radius: 3rem;
+    display: grid; 
+    margin-top: 2rem;
+    text-align: center;
+}
+
 .texto-blanco {
 
     color: white;
@@ -130,6 +138,10 @@
 
 .margin {
     margin: 2rem;
+}
+
+.margin-top {
+    margin-top: 2rem;
 }
 
 .fijar {
