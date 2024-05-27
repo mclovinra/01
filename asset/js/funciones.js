@@ -1,4 +1,4 @@
-import { comics } from '../js/productos.js';
+import { comics } from './productos.js';
 import { getComics } from './comics.js';
 
 
@@ -6,11 +6,10 @@ const crearCard = ( results = [] ) => {
 
     let comicsRow = document.getElementById("comicsRow");
 
-    results.map((result)=> {
+    comics.map((comic)=> {
 
-        const { id , name , image , species , status , location } = result;
-        const { name : nameLocation } = location;
-        
+        const { id , titulo , vol , desc , image , price , stock , editorial } = comic; 
+
         const divCol = document.createElement("div");
         divCol.classList.add("col-xl-3");
         divCol.classList.add("col-lg-3");
@@ -22,30 +21,29 @@ const crearCard = ( results = [] ) => {
 
         const card = document.createElement("div");
         card.classList.add("card");
+        card.classList.add("d-flex");
+        card.classList.add("align-items-stretch");
 
         const img = document.createElement("img");
         img.classList.add("card-img-top");
+        img.classList.add("image-card");
         img.src = image;
-        img.alt = `Nombre de imagen ${name}`;
+        img.alt = `${titulo}`;
 
         const divBody = document.createElement("div");
         divBody.classList.add("card-body");
 
         const title = document.createElement("h5");
         title.classList.add("card-title");
-        title.textContent = `Nombre : ${name}`;
+        title.textContent = `${titulo}`;
 
-        const subTitle = document.createElement("p");
-        subTitle.classList.add("card-text");
-        subTitle.textContent = `Especie : ${species}`;
+        const descrip = document.createElement("p");
+        descrip.classList.add("card-text");
+        descrip.textContent = `Sinopsis : ${desc}`;
 
-        const subTitle2 = document.createElement("p");
-        subTitle2.classList.add("card-text");
-        subTitle2.textContent = `Estatus : ${status}`;
-
-        const subTitle3 = document.createElement("p");
-        subTitle3.classList.add("card-text");
-        subTitle3.textContent = `Estatus : ${nameLocation}`;
+        const precio = document.createElement("p");
+        precio.classList.add("card-text");
+        precio.textContent = `${price}`;
 
         const btnVer = document.createElement("button");
         btnVer.classList.add("btn","btn-success");
@@ -53,12 +51,12 @@ const crearCard = ( results = [] ) => {
 
         //btnVer.addEventListener("click", ejemplo);
         btnVer.addEventListener("click", ()=> {
-             enviarDatos(id , name , image , species , status , nameLocation);
+             enviarDatos(id , titulo , vol , desc , image , price , stock , editorial);
         });
 
-        divBody.appendChild(subTitle);
-        divBody.appendChild(subTitle2);
-        divBody.appendChild(subTitle3);
+        divBody.appendChild(title);
+        divBody.appendChild(descrip);
+        divBody.appendChild(precio);
         divBody.appendChild(btnVer);
 
         card.appendChild(img);
@@ -75,3 +73,46 @@ const crearCard = ( results = [] ) => {
 getComics()
     .then( data => crearCard(data))
     .catch( error => console.log(`El error es: ${error}`));
+
+const enviarDatos = (id , titulo , vol , desc , image , price , stock , editorial) => {
+    
+    const rutaArchivoHTML = "../Detalles.html";
+
+    fetch(rutaArchivoHTML)
+        .then( (response) => {
+            return response.text();
+        } )
+        .then( ( html )=> {
+
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html , "text/html");
+
+            const imagePage = doc.getElementById("imagePage");
+            imagePage.src = image;
+            imagePage.alt = `Nombre de imagen : ${titulo}`;
+
+            const tituloPage = doc.getElementById("tituloPage");
+            tituloPage.textContent = `${titulo}`;
+
+            const volPage = doc.getElementById("volPage");
+            volPage.textContent = `Volumen : ${vol}`;
+
+            const descPage = doc.getElementById("descPage");
+            descPage.textContent = `Sinopsis : ${desc}`;
+
+            const pricePage = doc.getElementById("pricePage");
+            pricePage.textContent = `Precio : ${price}`;
+
+            const stockPage = doc.getElementById("stockPage");
+            stockPage.textContent = `Precio : ${stock}`;
+
+            const editorialPage = doc.getElementById("editorialPage");
+            editorialPage.textContent = `Precio : ${editorial}`;
+
+            const nuevoHTML = new XMLSerializer().serializeToString(doc);
+
+            document.body.innerHTML = nuevoHTML;
+
+        })
+
+}
