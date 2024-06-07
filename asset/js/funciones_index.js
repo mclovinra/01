@@ -84,6 +84,56 @@ const crearCarruselComicsCard = ( results = [] ) => {
     })
 }
 
+const enviarDatos = (id , titulo , vol , desc , image , price , stock , editorial) => {
+    
+    const rutaArchivoHTML = "../Detalles.html";
+
+
+    fetch(rutaArchivoHTML)
+        .then( (response) => {
+            return response.text();
+        } )
+        .then( ( html )=> {
+
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html , "text/html");
+
+            const imagePage = doc.getElementById("imagePage");
+            imagePage.src = image;
+            imagePage.alt = `Nombre de imagen : ${titulo}`;
+
+            const tituloPage = doc.getElementById("tituloPage");
+            tituloPage.textContent = `${titulo}`;
+
+            const volPage = doc.getElementById("volPage");
+            volPage.textContent = `Volumen : ${vol}`;
+
+            const descPage = doc.getElementById("descPage");
+            descPage.textContent = `Sinopsis : ${desc}`;
+
+            const pricePage = doc.getElementById("pricePage");
+            pricePage.textContent = `Precio : ${price}`;
+
+            const stockPage = doc.getElementById("stockPage");
+            stockPage.textContent = `Precio : ${stock}`;
+
+            const editorialPage = doc.getElementById("editorialPage");
+            editorialPage.textContent = `Precio : ${editorial}`;
+
+            const botonVolver = doc.getElementById("volverPage");
+            botonVolver.
+
+            const nuevoHTML = new XMLSerializer().serializeToString(doc);
+
+            document.body.innerHTML = nuevoHTML;
+
+            window.scrollTo(0, 0);
+
+        })
+
+}
+
+
 crearCarruselComicsCard()
     .then( data => crearCarruselComicsCard(data))
     .catch( error => console.log(`El error es: ${error}`));
