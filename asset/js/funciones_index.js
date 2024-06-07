@@ -93,3 +93,6 @@ const SearchProd = (event) => {
     const searchText = document.getElementById('textBusqueda').value;
     crearCardFiltro(searchText);
 }
+
+document.getElementById('searchButton').addEventListener('click', SearchProd);
+document.getElementById('searchInput').addEventListener('keyup', SearchProd);
