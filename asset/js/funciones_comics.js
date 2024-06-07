@@ -70,7 +70,7 @@ const crearCard = ( results = [] ) => {
 
 }
 
-const crearCardFiltro = ( searchText = '' ) => {
+export const crearCardFiltro = ( searchText = '' ) => {
 
     let comicsRow = document.getElementById("comicsRow");
 
