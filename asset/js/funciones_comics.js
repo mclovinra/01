@@ -52,6 +52,7 @@ const crearCard = ( results = [] ) => {
         //btnVer.addEventListener("click", ejemplo);
         btnVer.addEventListener("click", ()=> {
              enviarDatos(id , titulo , vol , desc , image , price , stock , editorial);
+             
         });
 
         divBody.appendChild(title);
@@ -69,6 +70,77 @@ const crearCard = ( results = [] ) => {
 
 }
 
+const crearCardFiltro = ( searchText = '' ) => {
+
+    let comicsRow = document.getElementById("comicsRow");
+
+    const filteredComics = comics.filter(comic => 
+        comic.titulo.toLowerCase().includes(searchText.toLowerCase())
+    );
+
+    filteredComics.map((comic)=> {
+
+        const { id , titulo , vol , desc , image , price , stock , editorial } = comic; 
+
+        const divCol = document.createElement("div");
+        divCol.classList.add("col-xl-3");
+        divCol.classList.add("col-lg-3");
+        divCol.classList.add("col-md-6");
+        divCol.classList.add("col-sm-12");
+        divCol.classList.add("col-xs-12");
+        divCol.classList.add("mt-2");
+        divCol.classList.add("mb-2");
+
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.classList.add("d-flex");
+        card.classList.add("align-items-stretch");
+
+        const img = document.createElement("img");
+        img.classList.add("card-img-top");
+        img.classList.add("image-card");
+        img.src = image;
+        img.alt = `${titulo}`;
+
+        const divBody = document.createElement("div");
+        divBody.classList.add("card-body");
+
+        const title = document.createElement("h5");
+        title.classList.add("card-title");
+        title.textContent = `${titulo}`;
+
+        const descrip = document.createElement("p");
+        descrip.classList.add("card-text");
+        descrip.textContent = `Sinopsis : ${desc}`;
+
+        const precio = document.createElement("p");
+        precio.classList.add("card-text");
+        precio.textContent = `${price}`;
+
+        const btnVer = document.createElement("button");
+        btnVer.classList.add("btn","btn-success");
+        btnVer.textContent = "Ver detalles"
+
+        //btnVer.addEventListener("click", ejemplo);
+        btnVer.addEventListener("click", ()=> {
+             enviarDatos(id , titulo , vol , desc , image , price , stock , editorial);
+             
+        });
+
+        divBody.appendChild(title);
+        divBody.appendChild(descrip);
+        divBody.appendChild(precio);
+        divBody.appendChild(btnVer);
+
+        card.appendChild(img);
+        card.appendChild(divBody);
+
+        divCol.appendChild(card);
+
+        comicsRow.appendChild(divCol);
+    })
+
+}
 
 getComics()
     .then( data => crearCard(data))
@@ -112,6 +184,8 @@ const enviarDatos = (id , titulo , vol , desc , image , price , stock , editoria
             const nuevoHTML = new XMLSerializer().serializeToString(doc);
 
             document.body.innerHTML = nuevoHTML;
+
+            window.scrollTo(0, 0);
 
         })
 

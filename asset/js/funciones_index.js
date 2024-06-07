@@ -1,50 +1,7 @@
 import { comics } from './productos.js';
 import { getComics } from './comics.js';
+import {crearCardFiltro} from './funciones_comics.js';
 
-
-
-const enviarDatos = (id , titulo , vol , desc , image , price , stock , editorial) => {
-    
-    const rutaArchivoHTML = "../Detalles.html";
-
-    fetch(rutaArchivoHTML)
-        .then( (response) => {
-            return response.text();
-        } )
-        .then( ( html )=> {
-
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html , "text/html");
-
-            const imagePage = doc.getElementById("imagePage");
-            imagePage.src = image;
-            imagePage.alt = `Nombre de imagen : ${titulo}`;
-
-            const tituloPage = doc.getElementById("tituloPage");
-            tituloPage.textContent = `${titulo}`;
-
-            const volPage = doc.getElementById("volPage");
-            volPage.textContent = `Volumen : ${vol}`;
-
-            const descPage = doc.getElementById("descPage");
-            descPage.textContent = `Sinopsis : ${desc}`;
-
-            const pricePage = doc.getElementById("pricePage");
-            pricePage.textContent = `Precio : ${price}`;
-
-            const stockPage = doc.getElementById("stockPage");
-            stockPage.textContent = `Precio : ${stock}`;
-
-            const editorialPage = doc.getElementById("editorialPage");
-            editorialPage.textContent = `Precio : ${editorial}`;
-
-            const nuevoHTML = new XMLSerializer().serializeToString(doc);
-
-            document.body.innerHTML = nuevoHTML;
-
-        })
-
-}
 
 const crearCarruselComicsCard = ( results = [] ) => {
 
@@ -130,3 +87,9 @@ const crearCarruselComicsCard = ( results = [] ) => {
 crearCarruselComicsCard()
     .then( data => crearCarruselComicsCard(data))
     .catch( error => console.log(`El error es: ${error}`));
+
+const SearchProd = (event) => {
+    event.preventDefault(); // Prevenir la recarga de la página
+    const searchText = document.getElementById('textBusqueda').value;
+    crearCardFiltro(searchText);
+}

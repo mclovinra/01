@@ -168,3 +168,23 @@
     line-height: 1.5;
     max-height: 3em;
 }
+.card-custom {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+.card-custom img {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    margin-right: 0.5rem;
+    max-height: 300px;
+}
+.card-custom .card-body {
+    flex: 1;
+    padding: 0.5rem;
+}
