@@ -8,8 +8,8 @@
 
     <link rel="icon" type="image/img" sizes="360x360" href="./asset/img/icon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="./asset/css/styles.css">
     <link rel="stylesheet" href="./asset/css/bootstrap.css">
 
@@ -47,6 +47,10 @@
                   <a class="nav-link" href="#">Administradores</a>
                 </li>             
               </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control mr-2" type="search" placeholder="Buscar..." aria-label="Search">
+                <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
+              </form>
             </div>
           </nav>
         </div>
@@ -102,177 +106,38 @@
       <div class="row">
         <div id="carouselExampleCaptions2" class="carousel slide col-lg-12 col-md-12 col-sm-12 col-xs-12;">
           <div class="carousel-inner">
-            <div  class="carousel-item active">
 
+            <div  class="carousel-item active">
               <div class="container">
                 <div id="rowCarrusel1" class="row">
-
-                  <!-- <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="margin-top: 1rem;">
-                    <div class="card" >
-                      <img  src="./asset/img/Productos/Superman-Tomo1.jpg" class="card-img-top image-card" alt="Superman-Portada: La historia sigue a Clark Kent, un periodista en el Daily Planet de Metrópolis, que lleva una doble vida como el superhéroe Superman, proveniente del planeta Krypton. Posee superpoderes como vuelo, fuerza sobrehumana y visión de rayos X, y fue criado en la Tierra por sus padres adoptivos. Clark utiliza sus poderes para proteger a la humanidad de amenazas diversas, enfrentando enemigos peligrosos y desafíos que prueban su valentía, mientras mantiene su identidad secreta y equilibra su vida como héroe y humano.">
-                      <div class="card-body">
-                        <h5 class="card-title">Superman</h5>
-                        <p class="card-text">La historia sigue a Clark Kent, un periodista en el Daily Planet de Metrópolis, que lleva una doble vida como el superhéroe...</p>
-                        <a href="#" class="btn btn-primary">Ver más...</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="margin-top: 1rem;">
-                    <div class="card">
-                      <img src="./asset/img/Productos/Batman-Tomo1.jpg" class="card-img-top image-card" alt="Batman: 
-                      La historia sigue a Bruce Wayne, un multimillonario que lucha contra el crimen en Gotham City como el justiciero enmascarado Batman, después de quedar traumatizado por el asesinato de sus padres. Con la ayuda de su mayordomo Alfred y aliados, Batman usa su ingenio, entrenamiento y tecnología avanzada para enfrentar a criminales como el Joker y Dos Caras. Mientras protege la ciudad, Batman lidia con su propia oscuridad y desafíos para mantener su identidad secreta.">
-                      <div class="card-body">
-                        <h5 class="card-title">Batman</h5>
-                        <p class="card-text">La historia sigue a Bruce Wayne, un multimillonario que lucha contra el crimen en Gotham City como el justiciero enmascarado...</p>
-                        <a href="#" class="btn btn-primary">Ver más...</a>
-                      </div>
-                    </div>
-                  </div>
-          
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="margin-top: 1rem;">
-                    <div class="card">
-                      <img src="./asset/img/Productos/Flash-Tomo1.jpg" class="card-img-top image-card" alt="Flash: 
-                      La historia trata de Barry Allen, un científico forense que adquiere la capacidad de moverse a velocidades extremas tras un accidente con un acelerador de partículas. Como el superhéroe Flash, utiliza su supervelocidad para luchar contra el crimen en Central City y proteger a los inocentes. También se enfrenta a villanos con habilidades similares y viaja en el tiempo para corregir errores del pasado. Mientras equilibra su vida como héroe y persona, busca la verdad sobre el asesinato de su madre y la condena injusta de su padre.">
-                      <div class="card-body">
-                        <h5 class="card-title">Flash</h5>
-                        <p class="card-text">La historia trata de Barry Allen, un científico forense que adquiere la capacidad de moverse a velocidades extremas tras...</p>
-                        <a href="#" class="btn btn-primary">Ver más...</a>
-                      </div>
-                    </div>
-                  </div>
-          
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="margin-top: 1rem;">
-                    <div class="card">
-                      <img src="./asset/img/Productos/WonderWoman-Tomo1.jpg" class="card-img-top image-card" alt="MujerMaravilla: La historia sigue a Diana, una guerrera amazona de Themyscira, que decide intervenir en los asuntos de la humanidad cuando un piloto llamado Steve Trevor se estrella en su isla durante la Primera Guerra Mundial. Armada con habilidades sobrehumanas, un lazo mágico y brazaletes que desvían las balas, se convierte en Mujer Maravilla para luchar por la justicia y la paz. Durante su travesía, enfrenta enemigos poderosos y descubre su verdadera identidad y propósito como heroína.">
-                      <div class="card-body">
-                        <h5 class="card-title">Mujer Maravilla</h5>
-                        <p class="card-text">La historia sigue a Diana, una guerrera amazona de Themyscira, que decide intervenir en los asuntos de la...</p>
-                        <a href="#" class="btn btn-primary">Ver más...</a>
-                      </div>
-                    </div>
-                  </div> -->
                   
                 </div>
               </div>
-
             </div>
 
             <div class="carousel-item">
-
               <div class="container">
                 <div id="rowCarrusel2" class="row">
 
-                  <!-- <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="margin-top: 1rem;">
-                    <div class="card" >
-                      <img  src="./asset/img/Shazam-Portada1.jpg" class="card-img-top image-card" alt="Shazam: 
-                      La historia trata de Billy Batson, un adolescente que recibe poderes mágicos de un antiguo mago, lo que le permite transformarse en el superhéroe adulto conocido como Shazam. Junto a su amigo Freddy, Billy investiga sus nuevos poderes, como supervelocidad, superfuerza y manipulación eléctrica. Mientras Billy aprende a usar sus habilidades, enfrenta desafíos como adolescente y superhéroe, incluido el enfrentamiento con el villano Dr. Sivana. La trama combina acción y humor, y muestra el crecimiento de Billy mientras se convierte en Shazam.">
-                      <div class="card-body">
-                        <h5 class="card-title">Shazam</h5>
-                        <p class="card-text">La historia trata de Billy Batson, un adolescente que recibe poderes mágicos de un antiguo mago, lo que le permite transformarse en...</p>
-                        <a href="#" class="btn btn-primary">Ver más...</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="margin-top: 1rem;">
-                    <div class="card">
-                      <img src="./asset/img/Black-Adam-Portada.jpg" class="card-img-top image-card" alt="Black-Adam: 
-                      La historia sigue a Teth-Adam, un antiguo guerrero egipcio que recibe poderes sobrenaturales de los dioses y se convierte en Black Adam. Despierta en el presente tras un largo encarcelamiento y lucha por encontrar su lugar en el mundo moderno mientras busca venganza y justicia a su manera. Con habilidades como vuelo, fuerza sobrehumana y manipulación de electricidad, se enfrenta a héroes y villanos por igual. A lo largo de la trama, Black Adam lidia con dilemas morales y su naturaleza oscura, mientras decide si será un héroe o un villano.">
-                      <div class="card-body">
-                        <h5 class="card-title">Black Adam</h5>
-                        <p class="card-text">La historia sigue a Teth-Adam, un antiguo guerrero egipcio que recibe poderes sobrenaturales de los dioses y se convierte en...</p>
-                        <a href="#" class="btn btn-primary">Ver más...</a>
-                      </div>
-                    </div>
-                  </div>
-          
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="margin-top: 1rem;">
-                    <div class="card">
-                      <img src="./asset/img/Literna-Verde-Portada.jpg" class="card-img-top image-card" alt="Linterna Verde: La historia sigue a Hal Jordan, un piloto de pruebas que se une a los Linterna Verde, un cuerpo intergaláctico de protectores. Dotado de un anillo que le otorga poder sobre la energía, Hal debe aprender a dominar sus nuevas habilidades mientras enfrenta amenazas en la Tierra y el espacio. Como parte de los Linterna Verde, Hal lucha contra el mal y protege la paz en el universo, usando su valentía y creatividad para superar desafíos.">
-                      <div class="card-body">
-                        <h5 class="card-title">Literna Verde</h5>
-                        <p class="card-text">La historia sigue a Hal Jordan, un piloto de pruebas que se une a los Linterna Verde, un cuerpo intergaláctico...</p>
-                        <a href="#" class="btn btn-primary">Ver más...</a>
-                      </div>
-                    </div>
-                  </div>
-          
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="margin-top: 1rem;">
-                    <div class="card">
-                      <img src="./asset/img/Spider-Man-Portada.jpg" class="card-img-top image-card" alt="Spider-Man: La historia sigue a Peter Parker, un estudiante de secundaria que adquiere habilidades arácnidas extraordinarias tras ser mordido por una araña radiactiva. Peter adopta la identidad secreta de Spider-Man para luchar contra el crimen en Nueva York. Al equilibrar su vida personal con sus responsabilidades como superhéroe, Peter enfrenta desafíos, enemigos peligrosos y dilemas morales mientras protege a sus seres queridos y a la ciudad.">
-                      <div class="card-body">
-                        <h5 class="card-title">Spider-Man</h5>
-                        <p class="card-text">La historia sigue a Peter Parker, un estudiante de secundaria que adquiere habilidades arácnidas extraordinarias...</p>
-                        <a href="#" class="btn btn-primary">Ver más...</a>
-                      </div>
-                    </div>
-                  </div> -->
-
                 </div>
               </div>
-
             </div>
 
             <div class="carousel-item">
-
               <div class="container">
                 <div id="rowCarrusel3" class="row">
 
-                  <!-- <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="margin-top: 1rem;">
-                    <div class="card" >
-                      <img  src="./asset/img/Iron-Man-Portada.jpg" class="card-img-top image-card" alt="Iron Man: La historia sigue a Tony Stark, un multimillonario empresario e inventor que, tras ser secuestrado y casi morir, escapa gracias a un traje especial diseñado por él mismo. Al regresar, perfecciona el traje y se convierte en Iron Man para combatir amenazas globales. Tony utiliza su ingenio y tecnología avanzada para proteger al mundo, enfrentándose a villanos poderosos mientras lidia con su personalidad y dilemas éticos.">
-                      <div class="card-body">
-                        <h5 class="card-title">Iron-Man</h5>
-                        <p class="card-text">La historia sigue a Tony Stark, un multimillonario empresario e inventor que, tras ser secuestrado y casi morir...</p>
-                        <a href="#" class="btn btn-primary">Ver más...</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="margin-top: 1rem;">
-                    <div class="card">
-                      <img src="./asset/img/Thor-Portada.jpg" class="card-img-top image-card" alt="Thor: 
-                      La historia sigue a Thor, el dios nórdico del trueno, que es desterrado a la Tierra por su arrogancia y comportamiento impulsivo. En la Tierra, Thor aprende humildad y a vivir entre los humanos sin sus poderes. Descubre que su hermano Loki planea conquistar Asgard y la Tierra, por lo que lucha para recuperar su martillo Mjolnir y sus poderes. Durante su travesía, Thor crece como persona y héroe, enfrentando amenazas y protegiendo a la humanidad mientras busca reconciliarse con su familia y su hogar en Asgard.">
-                      <div class="card-body">
-                        <h5 class="card-title">Thor</h5>
-                        <p class="card-text">La historia sigue a Thor, el dios nórdico del trueno, que es desterrado a la Tierra por su arrogancia y comportamiento impulsivo...</p>
-                        <a href="#" class="btn btn-primary">Ver más...</a>
-                      </div>
-                    </div>
-                  </div>
-          
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="margin-top: 1rem;">
-                    <div class="card">
-                      <img src="./asset/img/Dead-pool.jpg" class="card-img-top image-card" alt="Dead Pool: La historia sigue a Wade Wilson, un exsoldado de élite convertido en mercenario que se somete a un experimento fallido para curar su cáncer terminal. Como resultado, adquiere habilidades de curación rápida pero queda desfigurado. Con el alias de Deadpool y un sentido del humor irreverente, Wade busca venganza contra quienes lo hicieron sufrir y protege a los más débiles. Su estilo único incluye romper la cuarta pared y hablar directamente al público, aportando un toque cómico y satírico a sus aventuras.">
-                      <div class="card-body">
-                        <h5 class="card-title">Dead Pool</h5>
-                        <p class="card-text">La historia sigue a Wade Wilson, un exsoldado de élite convertido en mercenario que se somete a un experimento fallido...</p>
-                        <a href="#" class="btn btn-primary">Ver más...</a>
-                      </div>
-                    </div>
-                  </div>
-          
-                  <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12" style="margin-top: 1rem;">
-                    <div class="card">
-                      <img src="./asset/img/Hulk-portada.jpg" class="card-img-top image-card" alt="Hulk: La historia sigue a Bruce Banner, un científico que se transforma en la criatura verde Hulk tras un accidente con radiación gamma. Hulk tiene fuerza sobrehumana, resistencia y habilidades curativas, pero Bruce lucha por controlar a la bestia. A lo largo de la historia, Bruce busca una cura mientras enfrenta desafíos personales, enemigos peligrosos y dilemas morales, utilizando a Hulk para proteger a los inocentes y combatir amenazas incontrolables.">
-                      <div class="card-body">
-                        <h5 class="card-title">Hulk</h5>
-                        <p class="card-text">La historia sigue a Bruce Banner, un científico que se transforma en la criatura verde Hulk tras un accidente con radiación...</p>
-                        <a href="#" class="btn btn-primary">Ver más...</a>
-                      </div>
-                    </div>
-                  </div> -->
-
                 </div>
               </div>
-
             </div>
+
           </div>
+
           <button class="carousel-control-prev prev" type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
+
           <button class="carousel-control-next next" type="button" data-bs-target="#carouselExampleCaptions2" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
@@ -597,6 +462,8 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 <script type="module" src="/asset/js/funciones_index.js"></script>
 </body>
 </html>
