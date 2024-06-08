@@ -1,12 +1,28 @@
 import { comics } from './productos.js';
 import { getComics } from './comics.js';
+import { handleSearch } from './funcion_busqueda.js';
 
-
-const crearCard = ( results = [] ) => {
+export const crearCard = ( searchText = '' ) => {
 
     let comicsRow = document.getElementById("comicsRow");
 
-    comics.map((comic)=> {
+    if (!comicsRow) {
+        console.error("El elemento comicsRow no fue encontrado.");
+        return;
+    }
+    comicsRow.innerHTML = '';
+
+    let filteredComics = comics;
+    if(searchText !== '')
+    {
+        filteredComics = comics.filter(comic => 
+            comic.titulo.toLowerCase().includes(searchText.toLowerCase())
+        );
+
+    }
+    
+
+    filteredComics.map((comic)=> {
 
         const { id , titulo , vol , desc , image , price , stock , editorial } = comic; 
 
@@ -144,9 +160,15 @@ export const crearCardFiltro = ( searchText = '' ) => {
 
 }
 
-getComics()
-    .then( data => crearCard(data))
+document.addEventListener('DOMContentLoaded', () => {
+    const searchText = localStorage.getItem('searchText') || '';
+
+    console.log(searchText);
+    getComics()
+    .then( data => crearCard(searchText))
     .catch( error => console.log(`El error es: ${error}`));
+    
+});
 
 const enviarDatos = (id , titulo , vol , desc , image , price , stock , editorial) => {
     
@@ -199,6 +221,14 @@ const enviarDatos = (id , titulo , vol , desc , image , price , stock , editoria
 
         })
 }
+
+document.getElementById('searchButton').addEventListener('click', handleSearch);
+document.getElementById('searchInput').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+        handleSearch(event);
+    }
+});
+
 
 
 /* document.addEventListener("DOMContentLoaded", function() {

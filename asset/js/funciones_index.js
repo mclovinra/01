@@ -1,37 +1,24 @@
 import { comics } from './productos.js';
-import { getComics } from './comics.js';
-import {crearCardFiltro} from './funciones_comics.js';
+import { handleSearch } from './funcion_busqueda.js';
 
-
-const crearCarruselComicsCard = ( results = [] ) => {
-
+const crearCarruselComicsCard = () => {
     let rowCarrusel1 = document.getElementById("rowCarrusel1");
     let rowCarrusel2 = document.getElementById("rowCarrusel2");
     let rowCarrusel3 = document.getElementById("rowCarrusel3");
 
     let countCard = 1;
 
-    comics.map((comic)=> {
-
-        const { id , titulo , vol , desc , image , price , stock , editorial } = comic; 
+    comics.map((comic) => {
+        const { id, titulo, vol, desc, image, price, stock, editorial } = comic;
 
         const divColCard = document.createElement("div");
-        divColCard.classList.add("col-xl-3");
-        divColCard.classList.add("col-lg-3");
-        divColCard.classList.add("col-md-6");
-        divColCard.classList.add("col-sm-12");
-        divColCard.classList.add("col-xs-12");
-        divColCard.classList.add("mt-2");
-        divColCard.classList.add("mb-2");
+        divColCard.classList.add("col-xl-3", "col-lg-3", "col-md-6", "col-sm-12", "col-xs-12", "mt-2", "mb-2");
 
         const card = document.createElement("div");
-        card.classList.add("card");
-        card.classList.add("d-flex");
-        card.classList.add("align-items-stretch");
+        card.classList.add("card", "d-flex", "align-items-stretch");
 
         const img = document.createElement("img");
-        img.classList.add("card-img-top");
-        img.classList.add("image-card");
+        img.classList.add("card-img-top", "image-card");
         img.src = image;
         img.alt = `${titulo}`;
 
@@ -45,18 +32,18 @@ const crearCarruselComicsCard = ( results = [] ) => {
         const descrip = document.createElement("p");
         descrip.classList.add("card-text");
         descrip.textContent = `Sinopsis : ${desc}`;
-        
+
         const precio = document.createElement("p");
         precio.classList.add("card-text");
         precio.textContent = `${price}`;
 
         const btnVer = document.createElement("button");
-        btnVer.classList.add("btn","btn-success");
-        btnVer.textContent = "Ver detalles"
-
-        //btnVer.addEventListener("click", ejemplo);
-        btnVer.addEventListener("click", ()=> {
-             enviarDatos(id , titulo , vol , desc , image , price , stock , editorial);
+        btnVer.classList.add("btn", "btn-success");
+        btnVer.textContent = "Ver detalles";
+        btnVer.addEventListener("click", () => {
+            // Guardar la posición del scroll antes de redireccionar
+            localStorage.setItem('scrollPosition', window.scrollY);
+            enviarDatos(id, titulo, vol, desc, image, price, stock, editorial);
         });
 
         divBody.appendChild(title);
@@ -69,34 +56,26 @@ const crearCarruselComicsCard = ( results = [] ) => {
 
         divColCard.appendChild(card);
 
-
-        if(countCard <= 4){
+        if (countCard <= 4) {
             rowCarrusel1.appendChild(divColCard);
-        }
-        if(countCard > 4 && countCard <= 8){
+        } else if (countCard > 4 && countCard <= 8) {
             rowCarrusel2.appendChild(divColCard);
-        }
-        if(countCard > 8 && countCard <= 12 ){
+        } else if (countCard > 8 && countCard <= 12) {
             rowCarrusel3.appendChild(divColCard);
         }
 
-        countCard ++;
-    })
+        countCard++;
+    });
 }
 
-const enviarDatos = (id , titulo , vol , desc , image , price , stock , editorial) => {
-    
+const enviarDatos = (id, titulo, vol, desc, image, price, stock, editorial) => {
     const rutaArchivoHTML = "../Detalles.html";
 
-
     fetch(rutaArchivoHTML)
-        .then( (response) => {
-            return response.text();
-        } )
-        .then( ( html )=> {
-
+        .then((response) => response.text())
+        .then((html) => {
             const parser = new DOMParser();
-            const doc = parser.parseFromString(html , "text/html");
+            const doc = parser.parseFromString(html, "text/html");
 
             const imagePage = doc.getElementById("imagePage");
             imagePage.src = image;
@@ -132,21 +111,15 @@ const enviarDatos = (id , titulo , vol , desc , image , price , stock , editoria
             document.body.innerHTML = nuevoHTML;
 
             window.scrollTo(0, 0);
-
-        })
-
+        });
 }
 
+crearCarruselComicsCard();
 
-crearCarruselComicsCard()
-    .then( data => crearCarruselComicsCard(data))
-    .catch( error => console.log(`El error es: ${error}`));
 
-const SearchProd = (event) => {
-    event.preventDefault(); // Prevenir la recarga de la página
-    const searchText = document.getElementById('textBusqueda').value;
-    crearCardFiltro(searchText);
-}
-
-document.getElementById('searchButton').addEventListener('click', SearchProd);
-document.getElementById('searchInput').addEventListener('keyup', SearchProd);
+document.getElementById('searchButton').addEventListener('click', handleSearch);
+document.getElementById('searchInput').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter') {
+        handleSearch(event);
+    }
+});
