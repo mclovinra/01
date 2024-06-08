@@ -45,7 +45,7 @@ const crearCarruselComicsCard = ( results = [] ) => {
         const descrip = document.createElement("p");
         descrip.classList.add("card-text");
         descrip.textContent = `Sinopsis : ${desc}`;
-
+        
         const precio = document.createElement("p");
         precio.classList.add("card-text");
         precio.textContent = `${price}`;
@@ -120,8 +120,12 @@ const enviarDatos = (id , titulo , vol , desc , image , price , stock , editoria
             const editorialPage = doc.getElementById("editorialPage");
             editorialPage.textContent = `Precio : ${editorial}`;
 
-            const botonVolver = doc.getElementById("volverPage");
-            botonVolver.
+            const botonVolver = $('<a>', {
+                href: './index.html',
+                class: 'btn btn-warning',
+                text: 'Volver'
+            });
+            $('#cardPage').append(botonVolver);
 
             const nuevoHTML = new XMLSerializer().serializeToString(doc);
 
