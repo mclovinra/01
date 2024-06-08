@@ -11,13 +11,25 @@
     text-align: center;
 }
 
+.texto-search {
+    color:rgb(0, 0, 0);
+    border-radius: 3rem;
+    display: grid; 
+    margin-top: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    text-transform: none;
+    font-weight: normal;
+}
 .texto-blanco {
 
     color: white;
 }
 
 .fondo-morado-claro {
-    background-color: rgb(136, 120, 145)
+    background-color: rgb(136, 120, 145);
+    margin-top: 2rem; 
+    border-radius: 10px;
 }
 
 * {

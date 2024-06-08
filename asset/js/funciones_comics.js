@@ -231,13 +231,14 @@ document.getElementById('searchInput').addEventListener('keyup', (event) => {
 
 
 
-/* document.addEventListener("DOMContentLoaded", function() {
-    const scrollPosition = localStorage.getItem("scrollPosition");
+document.addEventListener("DOMContentLoaded", function() {
+    const searchText = localStorage.getItem('searchText');
 
-    console.log(scrollPosition);
+    if (searchText) {
 
-    window.scrollTo(0, scrollPosition);
-
-    localStorage.removeItem("scrollPosition");
+        const searchRel = document.getElementById('searchRelacion');
+        searchRel.innerHTML = `Busqueda relacionada con: <strong>"${searchText}"</strong>`;
+        
+    }
     
-}); */
+});

@@ -4,8 +4,12 @@ export const handleSearch = (event) => {
 
     if (searchInput) {
         localStorage.setItem('searchText', searchInput);
-        window.location.href = './comics.html';
+        window.location.href = './search.html';
+
+        const searchRel = doc.getElementById("searchRelacion");
+        searchRel.textContent = `${searchInput}`;
+
     } else {
-        console.log("Please enter a search term.");
+        console.log("");
     }
 };
