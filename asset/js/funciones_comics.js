@@ -82,6 +82,7 @@ export const crearCardFiltro = ( searchText = '' ) => {
 
         const { id , titulo , vol , desc , image , price , stock , editorial } = comic; 
 
+        const cardPage = document.getElementById("cardPage");
         const divCol = document.createElement("div");
         divCol.classList.add("col-xl-3");
         divCol.classList.add("col-lg-3");
@@ -125,12 +126,13 @@ export const crearCardFiltro = ( searchText = '' ) => {
         btnVer.addEventListener("click", ()=> {
              enviarDatos(id , titulo , vol , desc , image , price , stock , editorial);
              
-        });
+        });  
 
         divBody.appendChild(title);
         divBody.appendChild(descrip);
         divBody.appendChild(precio);
-        divBody.appendChild(btnVer);
+
+        /* divBody.appendChild(btnVer); */
 
         card.appendChild(img);
         card.appendChild(divBody);
@@ -152,6 +154,7 @@ const enviarDatos = (id , titulo , vol , desc , image , price , stock , editoria
 
     fetch(rutaArchivoHTML)
         .then( (response) => {
+            localStorage.setItem("scrollPosition", window.scrollY);
             return response.text();
         } )
         .then( ( html )=> {
@@ -181,6 +184,13 @@ const enviarDatos = (id , titulo , vol , desc , image , price , stock , editoria
             const editorialPage = doc.getElementById("editorialPage");
             editorialPage.textContent = `Precio : ${editorial}`;
 
+            const botonVolver = $('<a>', {
+                href: './Comics.html',
+                class: 'btn btn-warning',
+                text: 'Volver'
+            });
+            $('#cardPage').append(botonVolver);
+
             const nuevoHTML = new XMLSerializer().serializeToString(doc);
 
             document.body.innerHTML = nuevoHTML;
@@ -188,5 +198,16 @@ const enviarDatos = (id , titulo , vol , desc , image , price , stock , editoria
             window.scrollTo(0, 0);
 
         })
-
 }
+
+
+/* document.addEventListener("DOMContentLoaded", function() {
+    const scrollPosition = localStorage.getItem("scrollPosition");
+
+    console.log(scrollPosition);
+
+    window.scrollTo(0, scrollPosition);
+
+    localStorage.removeItem("scrollPosition");
+    
+}); */
