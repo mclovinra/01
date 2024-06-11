@@ -50,7 +50,7 @@ export const crearCard = ( results = [] ) => {
         const img = document.createElement("img");
         img.classList.add("card-img-top");
         img.classList.add("image-card");
-        img.src = image;
+        img.src = `../asset/img/Productos/${id}.jpg`;
         img.alt = `${titulo}`;
 
         const divBody = document.createElement("div");
