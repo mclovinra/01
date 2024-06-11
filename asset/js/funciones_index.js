@@ -123,3 +123,9 @@ document.getElementById('searchInput').addEventListener('keyup', (event) => {
         handleSearch(event);
     }
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    localStorage.setItem('searchText', '');
+    
+});

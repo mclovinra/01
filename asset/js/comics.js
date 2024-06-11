@@ -2,10 +2,10 @@ export const getComics = async() => {
 
     try{
 
-        const response = await fetch("https://rickandmortyapi.com/api/character");
+        const response = await fetch("https://api-comics-zai7.onrender.com/");
         const data =  await response.json();
 
-        return data.results;
+        return data.comics;
 
     }catch(error){
         console.error(`El error es: ${error}`);

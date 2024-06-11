@@ -5,7 +5,7 @@ export const getPersonajes = async() => {
         const response = await fetch("https://rickandmortyapi.com/api/character");
         const data =  await response.json();
 
-        return data.results;
+        return data.comics;
 
     }catch(error){
         console.error(`El error es: ${error}`);
