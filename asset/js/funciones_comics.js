@@ -64,8 +64,8 @@ export const crearCard = ( results = [] ) => {
         descrip.classList.add("card-text");
         descrip.textContent = `Sinopsis : ${desc}`;
 
-        const precio = document.createElement("p");
-        precio.classList.add("card-text");
+        const precio = document.createElement("h4");
+        precio.classList.add("card-title");
         precio.textContent = `${price}`;
 
         const btnVer = document.createElement("button");
