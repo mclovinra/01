@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cuerpo2{
+    margin: 5rem 15rem 5rem 15rem;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(130deg, rgb(150, 68, 81), rgb(62, 62, 133));
+}
+
+.contenedor4{
+    max-width: 700px;
+    width: 100%;
+    padding: 25px 30px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.contenedor4 .titulo{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.contenedor4 form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px 12px 0;
+}
+
+form .grupo{
+    margin-top: 15px;
+    width: calc(100%/2 - 20px);
+}
+
+form span{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.grupo input{
+    height: 40px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.grupo input:focus,
+.grupo input:valid{
+    border-color: skyblue;
+}
+
+form .boton{
+    width: 100%;
+    height: 40px;
+    margin: 40px 0;
+}    
+
+form .boton input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    cursor: pointer;
+    background: linear-gradient(130deg, rgb(62, 62, 133) , rgb(150, 68, 81));
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+}
+
+form .boton input:hover{
+    background: linear-gradient(130deg,rgb(150, 68, 81), rgb(62, 62, 133));
+}
+
+@media(max-width: 584px){
+    .contenedor4{
+        max-width: 100%;
+    }
+
+    form .grupo{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+
+    .contenedor4 form{
+        max-height: 400px;
+        overflow-y: scroll;
+    }
+
+    .contenedor4 form::-webkit-scrollbar{
+        width: 0;
+    }
+
+    form .boton{
+        margin: 20px;
+        
+    }
+}
+
+
+form .boton1{
+    width: 100%;
+    height: 40px;
+    margin: 0;
+}
+
+form .boton1 input{
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    cursor: pointer;
+    background: linear-gradient(130deg, rgb(62, 62, 133) , rgb(150, 68, 81));
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+}
