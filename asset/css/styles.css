@@ -3,6 +3,11 @@
     color: black;
 }
 
+.margen{
+    margin-top: 1rem;
+}
+
+
 .texto-rojo {
     color:white;
     border-radius: 3rem;
@@ -21,6 +26,7 @@
     text-transform: none;
     font-weight: normal;
 }
+
 .texto-blanco {
 
     color: white;
