@@ -5,19 +5,19 @@
 }
 
 .cuerpo2{
-    margin: 5rem 15rem 5rem 15rem;
+    margin: auto;
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    background: linear-gradient(130deg, rgb(150, 68, 81), rgb(62, 62, 133));
+    padding: 20px;
+    background-color: rgb(22, 0, 31);
 }
 
 .contenedor4{
-    max-width: 700px;
+    max-width: 800px;
     width: 100%;
-    padding: 25px 30px;
+    padding: 25px 30px 25px 30px;
     background-color: #fff;
     border-radius: 5px;
 }
@@ -128,4 +128,13 @@ form .boton1 input{
     font-weight: 500;
     border: none;
     border-radius: 5px;
+}
+
+small{
+    display: none;
+}
+
+.was-validate small{
+    display: block;
+    color: red;
 }
