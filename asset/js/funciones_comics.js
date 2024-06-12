@@ -2,6 +2,10 @@
 import { getComics } from './comics.js';
 import { handleSearch } from './funcion_busqueda.js';
 
+const containerCartProducts = document.querySelector(
+	'.container-cart-products'
+);
+
 
 //Busqueda de comics, con y sin filtro
 export const crearCard = ( results = [] ) => {
@@ -67,6 +71,14 @@ export const crearCard = ( results = [] ) => {
         const precio = document.createElement("h4");
         precio.classList.add("card-title");
         precio.textContent = `${price}`;
+
+        /* const btnCarro = document.createElement("button");
+        btnCarro.classList.add("btn","btn-info");
+        btnCarro.textContent = "Agregar al Carro"
+
+        btnCart.addEventListener('click', () => {
+            containerCartProducts.classList.toggle('hidden-cart');
+        }); */
 
         const btnVer = document.createElement("button");
         btnVer.classList.add("btn","btn-success");

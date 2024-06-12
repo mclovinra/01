@@ -202,6 +202,13 @@
     margin-right: 0.5rem;
     max-height: 300px;
 }
+.card-custom-img {
+    border-radius: 1.5rem;
+    max-width: 100%;
+    height: auto;
+    margin-right: 0.5rem;
+    max-height: 300px;
+}
 .card-custom .card-body {
     flex: 1;
     padding: 0.5rem;

@@ -59,20 +59,21 @@
     </div>
   </div> 
 
-    <div class="container fondo-morado-claro" style="border-radius: 10px;">
-      <div class="row" style="margin-top: 2rem;">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12;">
-          <h2 class="texto-rojo">Registro de Información</h2>
-        </div>
+  <div class="container fondo-morado-claro" style="border-radius: 10px;">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12;">
+        <h2 class="texto-rojo" style="margin-top: 1rem;">Bienvenidos a Sharingann</h2>
       </div>
     </div>
-<div class="cuerpo2">
-    <div class="contenedor4">
-        <div class="titulo">Registro</div>
-        <form id="validacion" novalidate>
+  </div>
+    
+  <div class="cuerpo2">
+      <div class="contenedor4">
+          <form id="validacion" novalidate>
+
             <div class="grupo">
-                <span>Usuario</span>
-                <input type="text" placeholder="Ingrese el Usuario" required>
+                <span>Rut</span>
+                <input type="text" placeholder="Ej: 12345678-9" required>
                 <small>Por favor ingrese el Usuario</small>
             </div>
             <div class="grupo">
@@ -82,12 +83,12 @@
             </div>
             <div class="grupo">
                 <span>Email</span>
-                <input type="email" placeholder="Ingrese Email" required>
+                <input type="email" placeholder="Ej: ejemplo@dominio.cl" required>
                 <small>Por favor ingrese el Email</small>
             </div>
             <div class="grupo">
                 <span>Teléfono</span>
-                <input type="number" placeholder="Ingrese Teléfono" required>
+                <input type="number" placeholder="Ej: 987654321" required>
                 <small>Por favor ingrese el Teléfono</small>
             </div>
             <div class="grupo">
@@ -100,28 +101,20 @@
                 <input type="password" placeholder="Confirme Contraseña" required>
                 <small>Por favor confirme Contraseña</small>
             </div>
-            <div class="boton">
-                <input type="submit" value="Registrarse">
-            </div>
-            <div class="boton1">
+            
+            <div class="boton-container">
+              <div class="boton1">
                 <a href="Login.html"><input type="button" value="Volver"></a>
-            </div>
-        </form>
-    </div>
-    
-    <script>
-        const addform = document.getElementById("validacion");
-        addform.addEventListener("submit", (e) => {
-            if(addform.checkValidity() === false){
-                e.preventDefault();
-                e.stopPropagation();
-                addform.classList.add('was-validate');
-                return false
-            }
-        })
-    </script>
+              </div>
 
-</div>
+              <div class="boton">
+                  <input type="submit" value="Registrarse">
+              </div>
+            </div>
+
+          </form>
+      </div>
+  </div>
     
     <footer class="footer" style="margin-top: 3rem;">
       <div class="container">

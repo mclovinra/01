@@ -3,7 +3,13 @@ import { getComics } from './comics.js';
 import { handleSearch } from './funcion_busqueda.js';
 
 
-//Busqueda de comics, con y sin filtro
+//Mensaje de busqueda
+document.getElementById('loginForm').addEventListener('submit', (event) => {
+    event.preventDefault();
+    searchCliente();
+});
+
+
 export const searchCliente = ( ) => {
 
     let rutSearch = document.getElementById("username").value.trim();
@@ -34,9 +40,14 @@ export const searchCliente = ( ) => {
 
 }
 
+const addform = document.getElementById("validacion");
+          addform.addEventListener("submit", (e) => {
+              if(addform.checkValidity() === false){
+                  e.preventDefault();
+                  e.stopPropagation();
+                  addform.classList.add('was-validate');
+                  return false
+              }
+          })
 
-//Mensaje de busqueda
-document.getElementById('loginForm').addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevenir el comportamiento predeterminado del formulario
-    searchCliente(); // Ejecutar la función `searchCliente`
-});
+
