@@ -138,10 +138,10 @@ const enviarDatos = (id , titulo , vol , desc , image , price , stock , editoria
             pricePage.textContent = `Precio : ${price}`;
 
             const stockPage = doc.getElementById("stockPage");
-            stockPage.textContent = `Precio : ${stock}`;
+            stockPage.textContent = `Stock : ${stock}`;
 
             const editorialPage = doc.getElementById("editorialPage");
-            editorialPage.textContent = `Precio : ${editorial}`;
+            editorialPage.textContent = `Editorial : ${editorial}`;
 
             const botonVolver = $('<a>', {
                 href: './Mangas.html',
