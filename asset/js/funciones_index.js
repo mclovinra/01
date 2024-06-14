@@ -45,7 +45,7 @@ const crearCarruselComicsCard = () => {
         btnVer.textContent = "Ver detalles";
         btnVer.addEventListener("click", () => {
             // Guardar la posición del scroll antes de redireccionar
-            localStorage.setItem('scrollPosition', window.scrollY);
+            sessionStorage.setItem('scrollPosition', window.scrollY);
             enviarDatos(id, titulo, vol, desc, image, price, stock, editorial);
         });
 
@@ -112,7 +112,7 @@ const crearCarruselMangasCard = () => {
         btnVer.textContent = "Ver detalles";
         btnVer.addEventListener("click", () => {
             // Guardar la posición del scroll antes de redireccionar
-            localStorage.setItem('scrollPosition', window.scrollY);
+            sessionStorage.setItem('scrollPosition', window.scrollY);
             enviarDatos(id, titulo, vol, desc, image, price, stock, editorial);
         });
 
@@ -197,6 +197,6 @@ document.getElementById('searchInput').addEventListener('keyup', (event) => {
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    localStorage.setItem('searchText', '');
+    sessionStorage.setItem('searchText', '');
     
 });

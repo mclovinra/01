@@ -3,7 +3,7 @@ export const handleSearch = (event) => {
     const searchInput = document.getElementById('searchInput').value.trim();
 
     if (searchInput) {
-        localStorage.setItem('searchText', searchInput);
+        sessionStorage.setItem('searchText', searchInput);
         window.location.href = './search.html';
 
         const searchRel = doc.getElementById("searchRelacion");

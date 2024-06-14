@@ -12,7 +12,7 @@ export const crearCard = ( results = [] ) => {
 
     let comicsRow = document.getElementById("comicsRow");
     let searchText = '';
-    searchText = localStorage.getItem('searchText') || '';
+    searchText = sessionStorage.getItem('searchText') || '';
 
     console.log(searchText);
 
@@ -113,7 +113,7 @@ const enviarDatos = (id , titulo , vol , desc , image , price , stock , editoria
 
     fetch(rutaArchivoHTML)
         .then( (response) => {
-            localStorage.setItem("scrollPosition", window.scrollY);
+            sessionStorage.setItem("scrollPosition", window.scrollY);
             return response.text();
         } )
         .then( ( html )=> {
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function() {
     .then( data => crearCard(data))
     .catch( error => console.log(`El error es: ${error}`));
 
-    const searchText = localStorage.getItem('searchText');
+    const searchText = sessionStorage.getItem('searchText');
 
     if (searchText != null) {
 
