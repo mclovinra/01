@@ -9,7 +9,7 @@ export const clientes = [
         "telefono":"957593826",
         "mail":"die.penaloza@duocuc.cl",
         "direccion":"Pedro Riveros N 1481",
-        "pass":"1234"
+        "pass": "1234"
     },
     
 ];

@@ -10,7 +10,7 @@ export const searchCliente = () => {
     let findClient = clientes.find(cliente => cliente.rut === rutSearch);
 
     if (findClient) {
-        if (findClient.contrasena !== pass) {
+        if (findClient.pass != pass) {
             loginMessage.textContent = "Contraseña incorrecta";
             loginMessage.classList.add('text-danger');
         } else {
